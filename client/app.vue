@@ -21,33 +21,3 @@
     flex-direction: column;
   }
 </style>
-
-<!-- <script>
-export default {
-  data() {
-    return {
-      posts: [],
-      error: null,
-    }
-  },
-  async fetch() {
-    try {
-      const response = await fetch('http://localhost:1337/api/posts', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Ошибка при загрузке данных');
-      }
-
-      const data = await response.json();
-      this.posts = data;
-    } catch (error) {
-      this.error = error.message;
-    }
-  },
-}
-</script> -->

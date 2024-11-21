@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "post1s",
+  "info": {
+    "singularName": "post1",
+    "pluralName": "post1s",
+    "displayName": "post1"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "content": {
+      "type": "text"
+    }
+  }
+}

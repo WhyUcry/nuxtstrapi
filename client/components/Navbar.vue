@@ -54,3 +54,8 @@
 </nav>
 
 </template>
+
+<script setup>
+  const route = useRoute()
+  const isActive = (path) => route.path.split('/')[1] === path
+</script>

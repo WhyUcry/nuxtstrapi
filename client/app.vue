@@ -27,46 +27,54 @@
 
 
 
-
   <NuxtLoadingIndicator throttle="0" />
   <Navbar />
   <NuxtPage />
-  <!-- <Up /> -->
+  <Up />
   <Footer />
 </template>
 
 <script setup>
   // const base_url = 'http://localhost:1337'
-  // const { id } = useRoute().params
-  // const api = await $fetch('http://localhost:1337/api/categories/${id}?populate=posts.img&populate=posts.categories')
+  const { id } = useRoute().params
   // const api = await $fetch('http://localhost:1337/api/posts?populate=*')
   // const posts = api.data.posts
   // const posts = api.data
 
 
-
   const base = 'http://localhost:1337' 
-  const api = await $fetch(`${base}/api/posts?populate=*`)
+  const api = await $fetch(`${base}/api/config?populate=*`)
   const config = api.data
 
+
   useHead({
-    title: config.title,
-    meta: [
-      { name: 'description', content: config.desc },
-      { name: 'keywords', content: config.keywords },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: base+config.favicon.url },
-    ],
-    bodyAttrs: {
-      class: 'container mx-auto bg-white dark:bg-gray-900'
-    },
-    head: {
-      script: [
-        { src: 'https://yastatic.net/share2/share.js', async: true, defer: true }
-      ]
-    }
+    title: config.title
   })
+
+  // useHead({
+  //   title: config.title,
+  //   meta: [
+  //     { name: 'description', content: config.desc },
+  //     { name: 'keywords', content: config.keywords },
+  //   ],
+  //   link: [
+  //     { rel: 'icon', type: 'image/x-icon', href: base+config.favicon.url },
+  //   ],
+  //   bodyAttrs: {
+  //     class: 'container mx-auto bg-white dark:bg-gray-900'
+  //   },
+  //   head: {
+  //     script: [
+  //       { src: 'https://yastatic.net/share2/share.js', async: true, defer: true }
+  //     ]
+  //   }
+  // })
+
+  // import { initFlowbite } from 'flowbite';
+
+  // onMounted(() => {
+  //     initFlowbite();
+  // });
 </script>
 
 <style scoped>

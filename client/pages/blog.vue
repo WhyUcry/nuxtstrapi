@@ -23,13 +23,20 @@
         <button v-if="!(displayedPosts.length === posts.length)" @click="loadMore" type="button" class="w-full text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Смотреть еще</button>
     </main>
 
+
+    <!-- <div class="post" v-for="post in posts" :key="post.id">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+      <img :src="base_url+post.img.url" :alt="post.img.alternativeText" width="300">
+    </div> -->
+
 </template>
 
 
 <script setup>
     const base_url = "http://localhost:1337"
-    const api = await $fetch(`${base_url}/api/posts?populate=*`)
+    const api = await $fetch(`${base_url}/api/posts/${id}?populate=*`)
     const posts = api.data
-    // const displayedPosts = ref(posts.slice(0, 12)) // отображаем первые 12 статей
-    // const loadMore = () => displayedPosts.value = posts.slice(0, displayedPosts.value.length + 4) 
+    const displayedPosts = ref(posts.slice(0, 12)) // отображаем первые 12 статей
+    const loadMore = () => displayedPosts.value = posts.slice(0, displayedPosts.value.length + 4)
 </script>

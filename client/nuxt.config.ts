@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     host: '0.0.0.0',
   },
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ['@nuxtjs/strapi'],
   strapi: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',

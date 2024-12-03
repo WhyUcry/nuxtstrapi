@@ -39,4 +39,9 @@
     const posts = api.data
     const displayedPosts = ref(posts.slice(0, 12)) // отображаем первые 12 статей
     const loadMore = () => displayedPosts.value = posts.slice(0, displayedPosts.value.length + 4)
+
+    // const { id } = useRoute().params
+    // const base = 'http://localhost:1337' 
+    // const api = await $fetch(`${base}/api/config?populate=*`)
+    // const config = api.data
 </script>

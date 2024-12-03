@@ -1,32 +1,4 @@
 <template>
-  <!-- <Navbar />
-  <h1 class="text-2xl ml-96 mt-8">Посты</h1>
-  <hr style="
-    width: 1250px;
-    margin: 0 auto;
-    margin-top: 20px;
-  ">
-    <div class="post" v-for="post in posts" :key="post.id">
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.content }}</p>
-      <img :src="base_url+post.img.url" :alt="post.img.alternativeText" width="300">
-    </div>
-
-    <div class="post1" v-for="post1 in post1s" :key="post1.id">
-      <h2>{{ post1.title }}</h2>
-      <p>{{ post1.content }}</p>
-      <img :src="base_url+post1.img.url" :alt="post1.img.alternativeText" width="300">
-    </div>
-
-
-  <div class="flex justify-center	mt-16">
-    <AllPosts />
-  </div>
-
-  <Footer /> -->
-
-
-
   <NuxtLoadingIndicator throttle="0" />
   <Navbar />
   <NuxtPage />
@@ -46,35 +18,23 @@
   const api = await $fetch(`${base}/api/config?populate=*`)
   const config = api.data
 
-
   useHead({
-    title: config.title
+    title: config.title,
+    meta: [
+      { name: 'description', content: config.desc },
+      { name: 'keywords', content: config.keywords },
+    ],
+    bodyAttrs: {
+      class: 'container mx-auto bg-white dark:bg-gray-900'
+    },
+    head: {
+      script: [
+        { src: 'https://yastatic.net/share2/share.js', async: true, defer: true },
+        { src: 'https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css', async: true, defer: true }
+      ]
+    }
   })
-
-  // useHead({
-  //   title: config.title,
-  //   meta: [
-  //     { name: 'description', content: config.desc },
-  //     { name: 'keywords', content: config.keywords },
-  //   ],
-  //   link: [
-  //     { rel: 'icon', type: 'image/x-icon', href: base+config.favicon.url },
-  //   ],
-  //   bodyAttrs: {
-  //     class: 'container mx-auto bg-white dark:bg-gray-900'
-  //   },
-  //   head: {
-  //     script: [
-  //       { src: 'https://yastatic.net/share2/share.js', async: true, defer: true }
-  //     ]
-  //   }
-  // })
-
-  // import { initFlowbite } from 'flowbite';
-
-  // onMounted(() => {
-  //     initFlowbite();
-  // });
+  
 </script>
 
 <style scoped>

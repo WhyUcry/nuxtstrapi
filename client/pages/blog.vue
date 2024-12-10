@@ -1,12 +1,13 @@
 <template>
+    <h1>Блог</h1>
     <main>
         <h2 class="text-4xl font-extrabold my-4 dark:text-white">Блог</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 mb-4">
-            <article v-for="post in displayedPosts" :key="post.id" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <article v-for="post in displayedPosts" :key="post.id" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
                 <NuxtLink class="block overflow-hidden" :to="'/post/' + post.documentId">
-                    <img class="rounded-t-lg" :src="base_url+post.img.url" :alt=post.img.alternativeText />
+                    <img class="rounded-t-lg " :src="base_url+post.img.url" :alt=post.img.alternativeText />
                 </NuxtLink>
-                <div class="p-5">
+                <div class="p-5 ">
                     <NuxtLink :to="'/post/' + post.documentId">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ post.title }}</h5>
                     </NuxtLink>
@@ -35,7 +36,7 @@
 
 <script setup>
     const base_url = "http://localhost:1337"
-    const api = await $fetch(`${base_url}/api/posts/${id}?populate=*`)
+    const api = await $fetch(`${base_url}/api/posts?populate=*`)
     const posts = api.data
     const displayedPosts = ref(posts.slice(0, 12)) // отображаем первые 12 статей
     const loadMore = () => displayedPosts.value = posts.slice(0, displayedPosts.value.length + 4)

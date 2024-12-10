@@ -93,14 +93,15 @@
 </template>
 
 <style scoped>
-    .box {
+    /* .box {
         display: flex;
         justify-content: center;
+        position: relative;
     }
 
     footer {
         position: absolute;
         width: 78rem;
         bottom: 0;
-    }
+    } */
 </style>

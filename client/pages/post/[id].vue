@@ -1,9 +1,8 @@
 <template>
-    <!-- тело статьи -->
-    <!-- <main class="max-w-screen-xl min-w-96 md:min-w-[48rem] lg:min-w-[56rem] mx-auto py-2"> -->
+    
     <main class="w-full lg:px-40">
         <!-- хлебные крошки -->
-        <nav class="flex" aria-label="Breadcrumb">
+        <!-- <nav class="flex" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
                     <NuxtLink to="/blog"
@@ -39,11 +38,12 @@
                     </div>
                 </li>
             </ol>
-        </nav>
+        </nav> -->
         <div class="ns_post">
             <div class="h-80 rounded-2xl my-4 bg-fixed bg-[length:100%_600px]" :style="'background-image: url('+base_url+post.img.url+')'"></div>
             <h1 class="relative text-4xl">{{ post.title }} <Share /></h1>
-            <p class="opacity-40">{{ formatDate(post.publishedAt.substring(0, 10)) }} • {{ post.views }} просмотров</p>
+            <p>{{ post.content }}</p>
+            <!-- <p class="opacity-40">{{ formatDate(post.publishedAt.substring(0, 10)) }} • {{ post.views }} просмотров</p> -->
             <div v-html="mark"></div>
         </div>
     </main>
@@ -57,54 +57,54 @@ const markdown = new MarkdownIt();
 
 const { id } = useRoute().params
 const base_url = 'http://localhost:1337'
-const api = await $fetch(`${base_url}/api/posts/${id}?populate=*`);
+const api = await $fetch(`http://localhost:1337/api/posts/${id}?populate=*`);
 const post = api.data;
-const mark = markdown.render(post.body);
+// const mark = markdown.render(post.body);
 
-const viewsCount = ref(post.views)
+// const viewsCount = ref(post.views)
 
-async function views() {
-    const response = await $fetch(`${base_url}/api/posts/${id}`, {
-        method: "PUT",
-        body: {
-            data: {
-                views: viewsCount.value + 1 // Увеличиваем количество просмотров
-            }
-        }
-    });
-}
+// async function views() {
+//     const response = await $fetch(`${base_url}/api/posts/${id}`, {
+//         method: "PUT",
+//         body: {
+//             data: {
+//                 views: viewsCount.value + 1 // Увеличиваем количество просмотров
+//             }
+//         }
+//     });
+// }
 
-onMounted(views())
+// onMounted(views())
 
 
 
-const apiConfig = await $fetch(`${base_url}/api/config?populate=*`)
-const config = apiConfig.data
-useHead({
-    title: `${post.title} - ${config.title}`
-})
+// const apiConfig = await $fetch(`${base_url}/api/config?populate=*`)
+// const config = apiConfig.data
+// useHead({
+//     title: `${post.title} - ${config.title}`
+// })
 
-// вычисляем дату создания статьи
-function formatDate(dateString) {
-  if (dateString) {
-    const date = new Date(Date.parse(dateString));
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const monthNames = [
-      'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-      'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
-    ];
-    return `${day} ${monthNames[month - 1]}`; // Используем `return` здесь
-  } else {
-    return '';
-  }
-}
+// // вычисляем дату создания статьи
+// function formatDate(dateString) {
+//   if (dateString) {
+//     const date = new Date(Date.parse(dateString));
+//     const day = date.getDate();
+//     const month = date.getMonth() + 1;
+//     const monthNames = [
+//       'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+//       'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+//     ];
+//     return `${day} ${monthNames[month - 1]}`; // Используем `return` здесь
+//   } else {
+//     return '';
+//   }
+// }
 
-function ellipsis(text, maxLength) {
-  if (text.length > maxLength) {
-    return text.replace(new RegExp(`^(.{${maxLength}}).*`), '$1...');
-  } else {
-    return text;
-  }
-}
+// function ellipsis(text, maxLength) {
+//   if (text.length > maxLength) {
+//     return text.replace(new RegExp(`^(.{${maxLength}}).*`), '$1...');
+//   } else {
+//     return text;
+//   }
+// }
 </script>

@@ -1,8 +1,7 @@
 <template>
-    <!-- <p class="absolute inset-x-0 bottom-0 left-10">Эта страница защищена правами ©</p> -->
 
 
-    <div class="box">
+    <div class="">
 
         <footer class="bg-white dark:bg-gray-900">
             <div class="mx-auto w-full py-6 lg:py-8">
@@ -91,17 +90,3 @@
 
     </div>
 </template>
-
-<style scoped>
-    /* .box {
-        display: flex;
-        justify-content: center;
-        position: relative;
-    }
-
-    footer {
-        position: absolute;
-        width: 78rem;
-        bottom: 0;
-    } */
-</style>

@@ -35,7 +35,7 @@ const response = await $fetch('http://localhost:1337/api/posts&filters[$or][0][t
             </div>
         </article>
         </div>
-        <p v-if="posts.length === 0">По вашему запросу ничего не найдено.</p>
+        <!-- <p v-if="posts.length === 0">По вашему запросу ничего не найдено.</p> -->
     </main>
 </template>
 

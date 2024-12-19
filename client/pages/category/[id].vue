@@ -27,7 +27,7 @@
   
   
   <script setup>
-    const base_url = "http://localhost:1337"
+    const base_url = "http://9ad68bbb32a5.vps.myjino.ru"
     const { id } = useRoute().params
     const api = await $fetch(`${base_url}/api/posts/${id}?populate=posts.img&populate=posts.categories`)
     const posts = api.data.posts

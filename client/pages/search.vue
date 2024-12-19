@@ -4,7 +4,7 @@
 
 <script setup>
 const router = useRouter()
-const response = await $fetch('http://localhost:1337/api/posts&filters[$or][0][title][$sontainsi]=${stringSearch}&filters[$or][1][body][$containsi]=${stringSeacrh}')
+const response = await $fetch('http://9ad68bbb32a5.vps.myjino.ru/api/posts&filters[$or][0][title][$sontainsi]=${stringSearch}&filters[$or][1][body][$containsi]=${stringSeacrh}')
 
 
 </script> -->
@@ -43,7 +43,7 @@ const response = await $fetch('http://localhost:1337/api/posts&filters[$or][0][t
 // import { ref, onMounted } from 'vue'
 const search = useSearchStore()
 const posts = ref([])
-const base_url = 'http://localhost:1337'
+const base_url = 'http://9ad68bbb32a5.vps.myjino.ru'
 
 
 async function searchAlert() {

@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     storesDirs: ['./stores/**'],
   },
   strapi: {
-    url: process.env.STRAPI_URL || 'http://9ad68bbb32a5.vps.myjino.ru',
+    url: process.env.STRAPI_URL || 'https://9ad68bbb32a5.vps.myjino.ru',
     prefix: '/api',
     admin: '/admin',
     version: 'v5',

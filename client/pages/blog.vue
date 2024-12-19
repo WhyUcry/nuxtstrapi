@@ -28,14 +28,14 @@
 
 
 <script setup>
-    const base_url = "http://9ad68bbb32a5.vps.myjino.ru"
+    const base_url = "https://9ad68bbb32a5.vps.myjino.ru"
     const api = await $fetch(`${base_url}/api/posts?populate=*`)
     const posts = api.data
     const displayedPosts = ref(posts.slice(0, 12)) // отображаем первые 12 статей
     const loadMore = () => displayedPosts.value = posts.slice(0, displayedPosts.value.length + 4)
 
     // const { id } = useRoute().params
-    // const base = 'http://9ad68bbb32a5.vps.myjino.ru' 
+    // const base = 'https://9ad68bbb32a5.vps.myjino.ru' 
     // const api = await $fetch(`${base}/api/config?populate=*`)
     // const config = api.data
 </script>

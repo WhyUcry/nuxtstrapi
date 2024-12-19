@@ -57,7 +57,6 @@
             </button>
         </div>
 
-        <h1>Фиксация выполнена!</h1>
     </main>
 </template>
 

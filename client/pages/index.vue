@@ -1,6 +1,6 @@
 <template>
     <main>
-        <h2 class="text-4xl font-extrabold my-4 dark:text-white">Главная страница</h2>
+        <h2 class="text-4xl font-extrabold my-4 dark:text-white">Главная страница 123</h2>
 
         <div id="default-carousel" class="relative w-full" data-carousel="slide">
             <!-- Carousel wrapper -->

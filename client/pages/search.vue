@@ -12,7 +12,7 @@ const response = await $fetch('https://9ad68bbb32a5.vps.myjino.ru/api/posts&filt
 
 
 <template>
-    <h1 class="text-2xl font-medium">Поиск</h1>
+    <h1 class="text-2xl font-medium">Поиск..</h1>
     <main>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 mb-4">
         <article v-for="post in posts" :key="post.id" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">

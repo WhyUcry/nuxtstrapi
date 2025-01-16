@@ -15,6 +15,7 @@
     "flowbite": "^2.5.2",
     "markdown-it": "^14.1.0",
     "nuxt": "^3.14.159",
+    "nuxt-swiper": "^2.0.0",
     "pinia": "^2.3.0",
     "vue": "latest",
     "vue-router": "latest"

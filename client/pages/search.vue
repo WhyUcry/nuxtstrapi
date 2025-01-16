@@ -1,16 +1,3 @@
-<!-- <template>
-    <h1>Поиск</h1>
-</template>
-
-<script setup>
-const router = useRouter()
-const response = await $fetch('https://9ad68bbb32a5.vps.myjino.ru/api/posts&filters[$or][0][title][$sontainsi]=${stringSearch}&filters[$or][1][body][$containsi]=${stringSeacrh}')
-
-
-</script> -->
-
-
-
 <template>
     <h1 class="text-2xl font-medium">Поиск..</h1>
     <main>

@@ -38,11 +38,15 @@ onMounted(loadShareScript())
     flex-flow: column !important;
 }
 
+.ya-share2__list{
+    filter: grayscale(1);
+}
+
 .ya-share2__list:hover li {
     filter: grayscale(1);
 }
 
 .ya-share2__list li:hover {
-    filter: grayscale(0);
+    filter: grayscale(1);
 }
 </style>

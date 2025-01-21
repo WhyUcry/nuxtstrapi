@@ -1,15 +1,17 @@
 <template>
     <main>
-        <h2 class="text-2xl font-extrabold my-4 dark:text-white">Главная страница</h2>
+        <h2 class="text-2xl my-4 dark:text-white opacity-75">Главная страница</h2>
 
         <ClientOnly>
-            <swiper-container ref="containerRef">
-            <swiper-slide
-                v-for="(slide, idx) in slides"
-                :key="idx"
-                style="background-color: rgb(32, 233, 70); color: white;">
-                Slide {{ idx + 1 }}
-            </swiper-slide>
+            <swiper-container ref="containerRef" class="h-48">
+                <swiper-slide
+                    v-for="(slide, idx) in slides"
+                    :key="idx"
+                    style="background-color: rgb(32, 233, 70); color: white;">
+
+                    
+                    Слайд {{ idx + 1 }}
+                </swiper-slide>
             </swiper-container>
         </ClientOnly>
 

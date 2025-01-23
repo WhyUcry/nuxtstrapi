@@ -38,7 +38,7 @@ async function searchAlert() {
 
     if(!search.searchQuery ==! true) {
         try {
-            const response = await $fetch(`${base_url}/api/posts?populate=*&filters[$or][0][title][$containsi]=${search.searchQuery}&filters[$or][1][body][$containsi]=${search.searchQuery}`);
+            const response = await $fetch(`${base_url}/api/posts?populate=*&filters[$or][0][title][$containsi]=${search.searchQuery}&filters[$or][1][content][$containsi]=${search.searchQuery}`);
             posts.value = response.data;
         } catch (error) {
             console.error('Ошибка при выполнении запроса:', error);

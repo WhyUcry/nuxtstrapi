@@ -43,15 +43,8 @@
 
 <script setup>
   import Blog from '~/pages/blog.vue';
-  // import { ref } from 'vue';
-
   const route = useRoute()
   const isActive = (path) => route.path.split('/')[1] === path
-
-
-
-  // import { ref, watch } from 'vue';
-  // import { useRouter } from '#app/composables/router';
   
   import { useSearchStore } from '~/stores/search'; // Убедитесь, что путь правильный
   const search = useSearchStore();

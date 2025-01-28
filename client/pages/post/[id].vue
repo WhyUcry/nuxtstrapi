@@ -4,6 +4,8 @@
             <div class="h-96 bg-[length:100%_600px] rounded-2xl my-4 bg-fixed" :style="'background-image: url(' + base_url + post.img.url + ')'"></div>
             <h1 class="relative text-4xl">{{ post.title }} <Share /></h1>
             <p>{{ post.content }}</p>
+            <!-- <p>{{ post.blocks }}</p> -->
+            <p v-html="blocks"></p>
             <div v-html="mark"></div>
         </div>
         <div v-else-if="error">
@@ -35,4 +37,9 @@ onMounted(async () => {
         error.value = 'Не удалось загрузить пост. Пожалуйста, попробуйте позже.';
     }
 });
+
+// import { RichText } from '@strapi/rich-text-react-renderer';
+// const MyComponent = ({ content }) => (
+//   <RichText content={content} />
+// );
 </script>

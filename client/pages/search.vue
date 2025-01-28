@@ -27,7 +27,6 @@
 </template>
 
 <script setup>
-// import { ref, onMounted } from 'vue'
 const search = useSearchStore()
 const posts = ref([])
 const base_url = 'https://9ad68bbb32a5.vps.myjino.ru'
